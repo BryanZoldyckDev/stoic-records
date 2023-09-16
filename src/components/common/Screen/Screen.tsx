@@ -4,9 +4,10 @@ interface ScreenInterface extends React.DetailedHTMLProps<React.HTMLAttributes<H
     children: React.ReactNode,
 }
 
-export const Screen = ({id, children, style}: ScreenInterface )=> {
+export const Screen = ({id, children, style, ...rest}: ScreenInterface )=> {
+
     return (
-    <div id={id} style={{ width: '100%', height: '100vh' , ...style}}>
+    <div id={id}  {...rest }style={{ width: '100%', height: '100vh' , ...style}}>
         {children}
     </div>
   )

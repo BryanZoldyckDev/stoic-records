@@ -1,11 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+*,
+*:before,
+*:after {
+  @apply cursor-emerald-16;
+}
+
+:root{
+  --maximum-blue-purple: #C4B6F0;
+  --purple-x-11: #9440FF;
+  --artic-lime: #C7F320;
+  --emerald: #06D27F;
+  --misty-rose: #F2D8D6;
+  --spanish-gray: #9E9E9E;
+  --midnight-green: #004751;
+  --space-cadet: #1A1A33;
+  --tea-green: #D1FFB4;
+
+  --cursor-1: url('https://res.cloudinary.com/dhovmuhja/image/upload/f_auto,q_auto/v1/stoic-records/edited/stoic-logo-tea-green-edited');
+  --cursor-2: url('https://res.cloudinary.com/dhovmuhja/image/upload/f_auto,q_auto/v1/stoic-records/edited/stoic-logo-space-cadet-edited');
+  --cursor-3: url('https://res.cloudinary.com/dhovmuhja/image/upload/f_auto,q_auto/v1/stoic-records/edited/stoic-logo-maximum-blue-purple-edited');
+  --cursor-4: url('https://res.cloudinary.com/dhovmuhja/image/upload/f_auto,q_auto/v1/stoic-records/edited/stoic-logo-emerald-edited');
+  --cursor-5: url('https://res.cloudinary.com/dhovmuhja/image/upload/f_auto,q_auto/v1/stoic-records/edited/stoic-logo-artic-lime-edited');
+
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family:  'OpenSauceSans';
-  src: url('./assets/fonts//OpenSauceSans-Regular.ttf');
+  src: url('./assets/fonts/OpenSauceSans/OpenSauceSans-Regular.ttf');
 }
+
+@font-face {
+  font-family: 'OpenSauceOne';
+  src: url('./assets/fonts/OpenSauceOne/OpenSauceOne-Regular.ttf');
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -69,60 +102,31 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
-.grid-container {
-  padding: 1rem 1rem;
+
+.artistSectionScreen{
+    background: var(--maximum-blue-purple);
+    height: 100vh;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+.artist-section-container {
+  padding: 1rem 2.5%;
+  padding-top: 5rem;
   display: grid;
-  background: black;
   gap: 1.25rem;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
 }
 
-.container .card-image {
-  width: 100%;
-  filter: grayscale(100%);
-  object-fit: cover;
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-}
-
-.container:is(:hover, :focus, :focus-visible) .card-image {
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-  filter: none;
-}
-
-
-.card-container {
-  background: transparent;
-  border: none;
-  width: 100%;
-}
-
-.card-container svg {
-  color: white;
-}
-
-.container p {
-  font-size: 1.5rem;
-  font-family: "OpenSauceSans";
-  color: white;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0;
-  cursor: pointer;
-}
+/*ARTISTCARD CSS TODO:FIX IMPORTATION FROM TAILWINDCSS*/
 
 @media (min-width: 460px) {
-
-  .grid-container { grid-template-columns: repeat(2, 1fr);   }
+  .artist-section-container { grid-template-columns: repeat(2, 1fr);   }
 }
 
 @media (min-width: 1000px) {
-  .grid-container { grid-template-columns: repeat(4, 1fr); 
+  .artist-section-container { grid-template-columns: repeat(4, 1fr); 
   }
 }
 

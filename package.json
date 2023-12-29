@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@radix-ui/react-menubar": "^1.0.3",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "embla-carousel-autoplay": "^8.0.0-rc13",
     "embla-carousel-react": "^8.0.0-rc13",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.274.0",

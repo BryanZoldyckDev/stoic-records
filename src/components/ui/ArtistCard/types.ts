@@ -1,5 +1,9 @@
 export interface ArtistCardElement {
     artistName: string;
+    artistWebsite?: string;
     imageUrl?: string;
-    icons: React.ReactNode[];
+    icons: {
+        icon: string;
+        iconLink: string;
+    }[];
 }

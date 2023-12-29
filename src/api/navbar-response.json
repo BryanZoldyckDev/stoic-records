@@ -1,0 +1,17 @@
+{
+    "logoUrl": "https://res.cloudinary.com/dhovmuhja/image/upload/f_auto,q_auto/v1/stoic-records/edited/stoic-isologo-space-cadet-edited",
+    "buttons": [
+        {
+            "sectionLink": "#artist",
+            "sectionName": "Artists"
+        },
+        {
+            "sectionLink": "#suscribe",
+            "sectionName": "Sucribe"
+        },
+        {
+            "sectionLink": "#stoic",
+            "sectionName": "Stoic"
+        }
+    ]
+}

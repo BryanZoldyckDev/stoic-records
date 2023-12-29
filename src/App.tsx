@@ -1,146 +1,27 @@
-import { BedIcon, FacebookIcon, InstagramIcon, TwitchIcon, TwitterIcon } from "lucide-react"
 import { Screen } from "./components/common/Screen"
-import { ArtistCardElement, ArtistCard } from "./components/ui/ArtistCard"
+import { Carousel } from "./components/common/Carrousel"
+import { ArtistSection } from "./components/common/ArtistSection"
+import { motion } from "framer-motion";
+import { NavBar } from "./components/common/NavBar";
 
-const artists: ArtistCardElement[] = [
-  {
-    artistName: 'ElRober',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      //si en dado caso en el json tenes un string, podes hacer un hashmap para devolver el icono como nodo icons: [twitter, instagram]
-      // hashmap[twitter] => <TwitterIcon />
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElEdi',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElRober',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      //si en dado caso en el json tenes un string, podes hacer un hashmap para devolver el icono como nodo icons: [twitter, instagram]
-      // hashmap[twitter] => <TwitterIcon />
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElEdi',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElRober',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      //si en dado caso en el json tenes un string, podes hacer un hashmap para devolver el icono como nodo icons: [twitter, instagram]
-      // hashmap[twitter] => <TwitterIcon />
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElEdi',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElRober',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      //si en dado caso en el json tenes un string, podes hacer un hashmap para devolver el icono como nodo icons: [twitter, instagram]
-      // hashmap[twitter] => <TwitterIcon />
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElEdi',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElRober',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      //si en dado caso en el json tenes un string, podes hacer un hashmap para devolver el icono como nodo icons: [twitter, instagram]
-      // hashmap[twitter] => <TwitterIcon />
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-  {
-    artistName: 'ElEdi',
-    imageUrl: 'https://scontent.fsal2-1.fna.fbcdn.net/v/t39.30808-6/302531879_406316854993045_8943438743950327839_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=EzGhNy7KZWIAX-Kp_b1&_nc_ht=scontent.fsal2-1.fna&cb_e2o_trans=q&oh=00_AfCudeR1DaP7d38dDL7H86YPITPSrbp_eJxTgkTgtJtG5g&oe=65095E0E',
-    icons: [
-      <InstagramIcon />,
-      <TwitterIcon />,
-      <FacebookIcon />,
-      <TwitchIcon />,
-      <BedIcon />
-    ]
-  },
-]
 
+import artistData from './api/artists-response.json';
+import navbarData from './api/navbar-response.json'
 function App() {
+
   return (
     <>
-      <Screen>
-        <div className="grid-container">
-         {
-          artists.map((element, index) => {
-            return (
-              <ArtistCard
-              key={index}
-              icons={element.icons}
-              artistName={element.artistName} imageUrl={element.imageUrl} />
-            )
-          })
-         }
-        </div>
+      <NavBar sections={navbarData}/>
+      <Screen id="newrealeses" className="bg-green-800 m-0 p-0">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}>
+          <Carousel/>
+        </motion.div>
+      </Screen>
+      <Screen id="artist" className="artistSectionScreen">
+          <ArtistSection artists={artistData}/>
       </Screen>
     </>
   )
